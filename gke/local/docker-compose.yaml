@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  app:
+    container_name: go-examples-gke-local
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/go/src/github.com/yanap/go-examples/
+    ports:
+      - "8080:8080"
