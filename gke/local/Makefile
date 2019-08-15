@@ -15,9 +15,3 @@ clean:
 
 build:
 	$(GO) build -o app main.go
-
-test:
-	$(GO) test ./... -v
-
-fmt:
-	$(GO) fmt ./...
