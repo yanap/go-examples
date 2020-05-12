@@ -1,0 +1,42 @@
+{
+    "go.toolsEnvVars": {
+        "GO111MODULE": "on"
+    },
+    "go.installDependenciesWhenBuilding": false,
+    "editor.formatOnSave": true,
+    "go.testFlags": [
+        "-v"
+    ],
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "all",
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    "gopls": {
+        // Add parameter placeholders when completing a function.
+        "usePlaceholders": true,
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false,
+    },
+    "go.formatTool": "goreturns",
+    "go.addTags": {},
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ]
+}

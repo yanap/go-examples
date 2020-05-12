@@ -1,0 +1,39 @@
+version: "3.7"
+services:
+  # golang application
+  app:
+    container_name: app
+    env_file:
+      - app.env
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION
+    build:
+      context: .
+      target: builder
+    volumes:
+      - ./:/go/src/github.com/yanap/go-examples
+    depends_on:
+      - db
+    ports:
+      - 1323:1323
+    command: /go/bin/peso
+  # mysql database
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: peso
+      MYSQL_USER: peso
+      MYSQL_PASSWORD: peso
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./deployments/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./deployments/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+volumes:
+  db_data:
