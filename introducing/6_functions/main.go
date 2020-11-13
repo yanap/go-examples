@@ -10,6 +10,11 @@ func main() {
 	fmt.Println(average(someOtherName))
 
 	f()
+
+	fmt.Println(f1())
+
+	x, y := mul()
+	fmt.Println(x, y)
 }
 
 func average(xs []float64) float64 {
@@ -24,4 +29,17 @@ func average(xs []float64) float64 {
 var x int = 5
 func f() {
 	fmt.Println(x)
+}
+
+func f1() int {
+	return f2()
+}
+
+func f2() (r int) {
+	r = 1
+	return
+}
+
+func mul() (int, int){
+	return 5, 6
 }
