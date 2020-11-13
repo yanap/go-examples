@@ -21,6 +21,4 @@ func main() {
 	x = "hello"
 	y = "hello"
 	fmt.Println(x == y)
-
-	
 }
