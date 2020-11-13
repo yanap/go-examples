@@ -18,7 +18,7 @@ func main() {
 		total += x[i]
 	}
 	fmt.Println(total / float64(len(x)))
-	for +, value := range x {
+	for _, value := range x {
 		total += value
 	}
 	fmt.Println(total / float64(len(x)))
