@@ -5,6 +5,18 @@ import (
 	"math"
 )
 
+/*
+type Circle struct {
+	x float64
+	y float64
+	z float64
+}
+*/
+
+type Circle struct {
+	x, y, z float64
+}
+
 func distance(x1, y1, x2, y2 float64) float64 {
 	a := x2 - x1
 	b := y2 - y1
@@ -27,4 +39,11 @@ func main() {
 	var cx, cy, cr float64 = 0, 0, 5
 	fmt.Println(rectangleArea(rx1, ry1, rx2, ry2))
 	fmt.Println(circleArea(cx, cy, cr))
+
+	//var c Circle
+	// c := new(Circle)
+	//c := Circle{x: 0, y: 0, r: 5}
+	//c := Circle{0, 0, 5}
+	c := &Circle{0, 0, 5}
+
 }
