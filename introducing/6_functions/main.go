@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	xs := []float64{98, 93, 77, 82, 83}
 	fmt.Println(average(xs))
-	
+
 	someOtherName := []float64{98, 93, 77, 82, 83}
 	fmt.Println(average(someOtherName))
 
@@ -16,12 +16,12 @@ func main() {
 	x, y := mul()
 	fmt.Println(x, y)
 
-	fmt.Println(add(1,2,3))
+	fmt.Println(add(1, 2, 3))
 
 	add := func(x, y int) int {
 		return x + y
 	}
-	fmt.Println(add(1,1))
+	fmt.Println(add(1, 1))
 }
 
 func average(xs []float64) float64 {
@@ -34,6 +34,7 @@ func average(xs []float64) float64 {
 }
 
 var x int = 5
+
 func f() {
 	fmt.Println(x)
 }
@@ -47,7 +48,7 @@ func f2() (r int) {
 	return
 }
 
-func mul() (int, int){
+func mul() (int, int) {
 	return 5, 6
 }
 
@@ -57,4 +58,11 @@ func add(args ...int) int {
 		total += v
 	}
 	return total
+}
+
+func factorial(x uint) uint {
+	if x == 0 {
+		return 1
+	}
+	return x * factorial(x-1)
 }
