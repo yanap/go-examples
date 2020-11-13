@@ -15,6 +15,13 @@ func main() {
 
 	x, y := mul()
 	fmt.Println(x, y)
+
+	fmt.Println(add(1,2,3))
+
+	add := func(x, y int) int {
+		return x + y
+	}
+	fmt.Println(add(1,1))
 }
 
 func average(xs []float64) float64 {
@@ -42,4 +49,12 @@ func f2() (r int) {
 
 func mul() (int, int){
 	return 5, 6
+}
+
+func add(args ...int) int {
+	total := 0
+	for _, v := range args {
+		total += v
+	}
+	return total
 }
