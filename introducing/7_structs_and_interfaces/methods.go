@@ -13,6 +13,16 @@ type Rectangle struct {
 	x1, y1, x2, y2 float64
 }
 
+type Person struct {
+	Name string
+}
+
+type Android struct {
+	//Person Person
+	Person
+	Model string
+}
+
 func distance(x1, y1, x2, y2 float64) float64 {
 	a := x2 - x1
 	b := y2 - y1
@@ -20,15 +30,22 @@ func distance(x1, y1, x2, y2 float64) float64 {
 }
 
 func (c *Circle) area() float64 {
-	return math.Pi * c.r * c.r
+	return math.Pi * c.x * c.y
 }
 
 func (r *Rectangle) area() float64 {
 	l := distance(r.x1, r.y1, r.x1, r.y2)
-	w := 
+	w := distance(r.x1, r.y1, r.x2, r.y1)
+	return l * w
+}
+
+func (p *Person) Talk() {
+	fmt.Println("Hi, my name is", p.Name)
 }
 
 func main() {
 	c := new(Circle)
 	fmt.Println(c.area)
+	a := new(Android)
+	a.Talk()
 }
