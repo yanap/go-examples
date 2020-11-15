@@ -55,10 +55,37 @@ type Shape interface {
 	area() float64
 }
 
-func totalArea(circles ...Circle) float64 {
+func totalArea(shapes ...Shape) float64 {
+	var area float64
+	for _, s := range shapes {
+		area += s.area()
+	}
+	return area
+}
+
+// THIS IS INVALID
+/*
+func totalArea(circles ...Circle, rectangles ...Rectangle) float64 {
 	var total float64
 	for _, c := range circles {
 		total += c.area()
 	}
+	for _, r := range rectangles {
+		total += r.area()
+	}
 	return total
 }
+*/
+
+type MultiShape struct {
+	shapes []Shape
+}
+
+func (m *MultiShape) area() float64 {
+	var area float64
+	for _, s := range m.shapes {
+		area += s.area()
+	}
+	return area
+}
+
