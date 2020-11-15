@@ -23,6 +23,7 @@ type Android struct {
 	Model string
 }
 
+
 func distance(x1, y1, x2, y2 float64) float64 {
 	a := x2 - x1
 	b := y2 - y1
@@ -48,4 +49,16 @@ func main() {
 	fmt.Println(c.area)
 	a := new(Android)
 	a.Talk()
+}
+
+type Shape interface {
+	area() float64
+}
+
+func totalArea(circles ...Circle) float64 {
+	var total float64
+	for _, c := range circles {
+		total += c.area()
+	}
+	return total
 }
