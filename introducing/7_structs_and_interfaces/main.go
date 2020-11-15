@@ -33,6 +33,12 @@ func circleArea(x, y, r float64) float64 {
 	return math.Pi * r * r
 }
 
+/*
+func circleArea(c *Circle) float64 {
+	return math.Pi * c.r * c.r
+}
+*/
+
 func main() {
 	var rx1, ry1 float64 = 0, 0
 	var rx2, ry2 float64 = 10, 10
@@ -47,4 +53,9 @@ func main() {
 	c := &Circle{0, 0, 5}
 	fmt.Println(c.x, c.y, c.z)
 
+	c.x = 10
+	c.y = 5
+
+	// c := Circle{0, 0, 5}
+	//fmt.Println(circleArea(&c))
 }
