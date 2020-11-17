@@ -33,4 +33,8 @@ func main() {
 	// func Repeat(s string, count int) string
 	fmt.Println(strings.Repeat("a", 5))
 	// => "aaaaa"
+
+	// func Replace(s, old, new string. n int) string
+	fmt.Println(strings.Replace("aaaa", "a", "b", 2))
+	// => "bbaa"
 }
