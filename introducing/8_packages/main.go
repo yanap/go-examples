@@ -37,4 +37,18 @@ func main() {
 	// func Replace(s, old, new string. n int) string
 	fmt.Println(strings.Replace("aaaa", "a", "b", 2))
 	// => "bbaa"
+
+	// func Split(s, sep string) []string
+	fmt.Println(strings.Split("a-b-c-d-e", "-"))
+	// => []string{"a","b", "c", "d", "e"}
+
+	// func ToLower(s string) string
+	fmt.Println(strings.ToLower("TEST"))
+	// => "test"
+
+	// func ToUpper(s string) string
+	fmt.Println(strings.ToUpper("test"))
+	// => "TEST"
+
+	
 }
