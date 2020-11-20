@@ -10,7 +10,7 @@ func main() {
 		// handle the error here
 		return
 	}
-	defer file.CLose()
-	
+	defer file.Close()
+
 	file.WriteString("test")
 }
